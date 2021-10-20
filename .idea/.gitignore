@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# CodeStream ignored files
+/../../Graphs\.idea/codestream.xml
+# Datasource local storage ignored files
+/../../../../../../:\Users\karst\IdeaProjects\Graphs\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
