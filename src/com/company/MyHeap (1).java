@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 class MyHeap<T extends Comparable>{
-    HashMap<T, Integer>  positionTable=new HashMap<>();
+    HashMap<T, Integer> positionTable=new HashMap<>();
     ArrayList<T> minheap;
     private int size;
     public MyHeap(){
@@ -14,6 +14,8 @@ class MyHeap<T extends Comparable>{
     public int getPosition(T item){
         return  positionTable.get(item);
     }
+
+    public  boolean isEmpty(){return size <=0;}
     private int parent(int pos){
         return (pos-1)/2;
     }
@@ -23,12 +25,12 @@ class MyHeap<T extends Comparable>{
     private  int rightChild(int pos){
         return pos*2 +2;
     }
-    private void swap(int p1,int p2){
-        T dummy=minheap.get(p1);
-        minheap.set(p1,minheap.get(p2));
-        minheap.set(p2,dummy);
-        positionTable.put(minheap.get(p1),p1);
-        positionTable.put(minheap.get(p2),p2);
+    private void swap(int pos1,int pos2){
+        T dummy=minheap.get(pos1);
+        minheap.set(pos1,minheap.get(pos2));
+        minheap.set(pos2,dummy);
+        positionTable.put(minheap.get(pos1),pos1);
+        positionTable.put(minheap.get(pos2),pos2);
     }
     public void insert(T item){
         minheap.add(item);
@@ -46,15 +48,11 @@ class MyHeap<T extends Comparable>{
     public T viewMin(){
         return minheap.get(0);
     }
-    public  boolean isEmpty(){
-        if (size>0)
-            return false;
-        return true;
-    }
-    public T extractMin(){
-        T min=minheap.get(0);
-        minheap.set(0,minheap.get(size-1));
-        positionTable.put(minheap.get(0),0);
+
+    public T extractMin() {
+        T min = minheap.get(0);
+        minheap.set(0, minheap.get(size - 1));
+        positionTable.put(minheap.get(0), 0);
         size--;
         increasekey(0);
         return min;
