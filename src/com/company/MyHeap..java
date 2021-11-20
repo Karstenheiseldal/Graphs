@@ -11,6 +11,7 @@ class MyHeap<T extends Comparable>{
         this.minheap=new ArrayList<T>();
         this.size=0;
     }
+
     public int getPosition(T item){
         return  positionTable.get(item);
     }
