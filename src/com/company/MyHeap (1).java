@@ -15,7 +15,10 @@ class MyHeap<T extends Comparable>{
         return  positionTable.get(item);
     }
 
-    public  boolean isEmpty(){return size <=0;}
+    public  boolean isEmpty(){if (size>0){
+        return false;}
+    return true;}
+
     private int parent(int pos){
         return (pos-1)/2;
     }
