@@ -102,9 +102,9 @@ public class Main {
 
         myGraph.addEdge(SlagelseID, SorøID, 14);
 
+
         myGraph.printGraph();
         myGraph.PrimsT();
         System.out.println("The price of the minimum spanning tree is " + myGraph.totalweight*100000 +" DKK");
-
         }
 }

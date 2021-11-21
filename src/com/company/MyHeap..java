@@ -53,7 +53,7 @@ class MyHeap<T extends Comparable>{
         return minheap.get(0);
     }
 
-    public T extractMin() {
+    public T extractMin() { //Extracts the minimum in the minheap.
         T min = minheap.get(0);
         minheap.set(0, minheap.get(size - 1));
         positionTable.put(minheap.get(0), 0);
@@ -61,6 +61,7 @@ class MyHeap<T extends Comparable>{
         increasekey(0);
         return min;
     }
+
     private boolean movedown(int pos){
         boolean leftsmaller= leftChild(pos)<size && minheap.get(leftChild(pos)).compareTo(minheap.get(pos))<0;
         boolean rightsmaller = rightChild(pos)<size && minheap.get(rightChild(pos)).compareTo(minheap.get(pos))<0;
